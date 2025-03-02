@@ -2878,8 +2878,14 @@ const countries_data = [
 function mostSpokenLanguages(countries, number){
     const arr = countries.flatMap(c => c.languages)
     const setL = new Set(arr)
-    
+    const result = []
     for(const l of setL){
-        
+        const a = arr.filter(c => c === l)
+        result.push({ [l]: a.length})
     }
+    result.sort((a, b) => Object.values(b) - Object.values(a))
+    return result.slice(0, number)
 }
+
+console.log(mostSpokenLanguages(countries_data, 10))
+console.log(mostSpokenLanguages(countries_data, 3))
