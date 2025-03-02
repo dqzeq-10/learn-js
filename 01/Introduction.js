@@ -1,0 +1,1 @@
+console.log('Chao zeq den voi 30daysofjavascript')
