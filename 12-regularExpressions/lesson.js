@@ -153,18 +153,19 @@ console.log(txt5.match(/\b\w{4}\b/g))  //['This', 'made', '2019']
 
 console.log(txt5.match(/\b[a-zA-Z]{4}\b/g)) //['This', 'made']
 
+console.log(txt5.match(/\d{4}/g)) //['2019']
 
+console.log(txt5.match(/\d{1,4}/g)) //['6', '2019']
 
-//.. tiep
 
 
 
 // ^
 const txt6 = 'This regular expression example was made in December 6,  2019.'
-console.log(txt6.match(/^This/))
+console.log(txt6.match(/^This/)) //['This', index: 0, input: 'This regular expression example was made in December 6, 2019,']
 
-console.log(txt6.match(/[^A-Za-z,. ]+/g)) //['6', '2019']
+console.log(txt6.match(/[^A-Za-z,. ]+/g)) //['6', '2019'] no A to Z, no a to z, no comma, no space
 
 //exact ^ $
 let name = 'Asabeneh'
-// console.log(name.test(/^[A-Z][a-z]{3,12}$/))
+console.log(/^[A-Z][a-z]{3,12}$/.test(name))//true: Bắt đầu với A-Z, kết thúc với 3~12 chữ a-z
