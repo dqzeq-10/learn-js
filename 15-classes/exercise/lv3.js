@@ -95,11 +95,11 @@ class PersonAccount{
     }
 
     totalIncome(){
-        return this.incomes.reduce((acc, n) => acc+n)
+        return this.incomes.length> 0 && this.incomes.reduce((acc, n) => acc+n)
     }
 
     totalExpense(){
-        return this.expenses.reduce((acc, n) => acc+n)
+        return this.expenses.length > 0 && this.expenses.reduce((acc, n) => acc+n)
     }
 
     accountInfo(){
@@ -118,3 +118,16 @@ class PersonAccount{
         this.expenses.push(exp)
     }
 }
+
+const pa1 = new PersonAccount('Zeq', 'Tran', [], [])
+console.log(pa1)
+console.log(pa1.accountInfo())
+console.log(pa1.accountBalance())
+
+
+pa1.addIncome = 10000000
+pa1.addExpense = 2000000
+
+console.log(pa1)
+console.log(pa1.accountInfo())
+console.log(pa1.accountBalance())
