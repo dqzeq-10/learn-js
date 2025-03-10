@@ -98,5 +98,16 @@ const txt = `{
 const txtObj = JSON.parse(txt)
 // console.log(txtObj)
 
- console.log(Object.entries(txtObj)[0][1]['skills'].length)
+// console.log(Object.values(txtObj)[0]['skills'].length)
 
+function whoHasMostSkills(txtObj){
+    return Object.values(txtObj).reduce((acc,user) =>{
+        if (user['skills'].length > acc['skills'].length){
+            acc = user
+        }
+        return acc
+    }, Object.values(txtObj)[0])
+
+}
+
+console.log(whoHasMostSkills(txtObj))
