@@ -1,0 +1,54 @@
+<!-- //DOM document object model - day1
+//get, create, append or remove HTML elements by JS
+//select HTML elements using jS is similar to selectiing using css -->
+
+<!-- //GETTTING ELEMENTS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1 class='title' id='first-title'>First Title</h1>
+    <h1 class='title' id='second-title'>Second Title</h1>
+    <h1 class='title' id='third-title'>Third Title</h1>
+    <h1></h1>
+    <script>
+        console.log('getting elements by tag name')// getting elements by tag name
+        const allTitles = document.getElementsByTagName('h1')
+        console.log('Length:'+ allTitles.length)
+
+        for(let i = 0; i< allTitles.length; i++){
+            console.log(allTitles[i])
+        }
+        // vòng for như nhau
+        for (const item of allTitles){
+            console.log(item)
+        }
+
+
+        console.log('getting an elements by id') //getting an elements by id
+        let firstTitle = document.getElementById('first-title')
+        console.log(firstTitle)
+
+
+        console.log('getting elements by using querySelector methods') //chỉ lấy phần tử đầu tiên tìm thấy
+        console.log('querySelector')
+        let firstTitle2 = document.querySelector('h1')
+        let firstTitle3 = document.querySelector('#first-title')
+        let firstTitle4 = document.querySelector('.title')
+        console.log(firstTitle2)
+        console.log(firstTitle3)
+        console.log(firstTitle4)
+        //cả ba biến trên đều lấy thẻ h1 đầu tiên vì querySelector đều lấy phần tử đầu tiên tìm thấy
+
+        console.log('querySelectorAll') //dùng để lấy tất cả các elements theo tagname or class.
+        //nó trả về a nodeList kiểu mảng giống object, hỗ trợ các method của arrayarray
+        const allTitles2 = document.querySelectorAll('h1')
+        allTitles2.forEach(item => console.log(item))
+
+    </script>
+</body>
+</html>
+
