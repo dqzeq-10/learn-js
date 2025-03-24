@@ -49,6 +49,67 @@
         const allTitles2 = document.querySelectorAll('h1')
         allTitles2.forEach(item => console.log(item))
 
+
+        //adding attributed href, disabled, title, src, id, class, style
+        const titles = document.querySelectorAll('h1')
+        //without setAttribute
+        titles[3].className = 'title'
+        titles[3].id = 'fourth- title'
+        //using setAttribute
+        titles[3].setAttribute('class', 'titleoke')
+        titles[3].setAttribute('id', 'okek')
+
+        //adding class using classList, append the class, doesn't over ride
+        titles[3].classList.add('title', 'header-title') //class="titleoke title header-title"
+        //remove class using classList.remove()
+        titles[3].classList.remove('title', 'header-title')
+        
+        //adding text to HTML element using textContent
+        titles[3].textContent = 'FOURTH TITLE'
+
+        //adding text to HTML element using innerHTML
+        titles[3].innerHTML = 'FoUrTh TiTlE'
+
+
+        //innerHTML can adding string of HTML elements
+        titles[3].innerHTML = '<ul>trandinhquy</ul>'
+        //innerHTML can remove by removeChild() or assign ''
+        titles[3].innerHTML = ''
+
+        //adding style
+        //adding style color
+        const titless = document.querySelectorAll('h1')
+        titless.forEach((title, i) => {
+            title.style.fontSize = '24px'
+            if (i%2 == 0){
+                title.style.color = 'green'
+            }else{
+                title.style.color = 'red'
+            }
+        })
+
+        //adding style background color
+        titless.forEach((title, i) => {
+            if(i%2 == 0){
+                title.style.backgroundColor = 'red'
+            }else {
+                title.style.backgroundColor = 'green'
+            }
+        })
+
+        //adding style font size
+
+        titless.forEach((title, i) => {
+            if(i %2 ==0){
+                title.style.fontSize = '20px'
+            }else{
+                title.style.fontSize = '30px'
+            }
+        })
+
+
+
+
     </script>
 </body>
 </html>
