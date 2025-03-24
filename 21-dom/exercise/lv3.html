@@ -32,17 +32,16 @@
             return color
         }
 
-        
-        
-        
         const h1 = document.querySelector('h1')
         
         h1.innerHTML = h1.textContent.replace('2020', '<span id ="year">2020</span>')
         const yearSpan = document.getElementById('year')
+
         setInterval(() => {
             yearSpan.style.color = getRandomColor()
         }, 1000);
 
+        
         
 
     </script>
