@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1">1111</p>
+    <p id="p2">222222222</p>
+    <p id="p3">33333333</p>
+    <p id="p4">444444</p>
+
+    <script>
+
+
+        const plist = document.querySelectorAll('p')
+        plist.forEach((item, index ) => {
+            if (index%2 ==0){
+                item.style.color = 'green';
+
+            }else{
+                item.style.color = 'red';
+
+            }
+            item.style.backgroundColor = 'blue';
+            item.style.border = '1px solid black'; 
+            item.style.fontSize = '16px';
+            item.style.fontFamily = 'arial';
+        });
+
+        plist[1].textContent = 'okkkkk'
+        plist[1].id = 'p2222222222'
+        plist[1].className = 'class2222'
+
+
+
+
+
+    </script>
+</body>
+
+</html>
