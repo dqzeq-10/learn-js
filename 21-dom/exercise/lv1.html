@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">1111</p>
+    <p id="p2">222222222</p>
+    <p id="p3">33333333</p>
+    <p id="p4">444444</p>
+
+    <script>
+        const p1 = document.querySelector('p')
+        console.log(p1)
+
+        const pid1 = document.querySelector('#p1')
+        console.log(pid1)
+        
+        const plist = document.querySelectorAll('p')
+        plist.forEach(i => console.log(i))
+
+        plist.forEach(i => console.log(i.textContent))
+
+        plist[3].textContent = 'Fourth Paragraph'
+        
+        plist[0].id = 'p11'
+        plist[0].className = 'c11'
+        plist[1].id = 'p22'
+        plist[1].className = 'p22'
+        plist[2].id = 'p33'
+        plist[2].className = 'c33'
+        plist[3].id = 'p44'
+        plist[3].className = 'c44'
+
+
+
+    </script>
+</body>
+</html>
