@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Asabeneh Challenges 2020</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: sans-serif;">
+
+<script>
+// Dữ liệu cho bài
+const asabenehChallenges2020 = {
+  description: 'Asabeneh Yetayeh challenges',
+  challengeTitle: 'Asabeneh Yetayeh challenges',
+  challengeSubtitle: '30DaysOfJavaScript Challenge',
+  challengeYear: 2020,
+  keywords: [
+    'HTML',
+    'HTML5',
+    'CSS',
+    'CSS3',
+    'JS',
+    'JavaScript',
+    'ES6',
+    'Promise',
+    'async await',
+    'Database',
+    'React',
+    'React Hooks',
+    'Context API',
+    'React Router',
+    'Web Storage',
+    'localStorage',
+    'sessionStorage',
+    'Redux',
+    'Node',
+    'MongoDB',
+    'SQL',
+    'API',
+    'DOM',
+    'data science',
+    'MERN',
+    'Python',
+    'Flask',
+    'Statistics',
+    'Linear Algebra',
+    'Numpy',
+    'Pandas',
+    'Scipy',
+    'Scikit-learn',
+    'Visualization',
+    'D3.js'
+  ],
+  author: {
+    firstName: 'Asabeneh',
+    lastName: 'Yetayeh',
+    titles: [
+      ['🌱', 'Educator'],
+      ['💻', 'Programmer'],
+      ['🌐', 'Developer'],
+      ['🔥', 'Motivator'],
+      ['📔', 'Content Creator']
+    ],
+    qualifications: [
+      'MSc. Computer Science Ongoing',
+      'BSc. Information and Communication Eng.',
+      'MSc. Food Technology',
+      'BSc.Food Technology'
+    ],
+    socialLinks: [
+      {
+        social: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/asabeneh/',
+        fontawesomeIcon: '<i class="fab fa-linkedin"></i>'
+      },
+      {
+        social: 'Twitter',
+        url: 'https://twitter.com/Asabeneh',
+        fontawesomeIcon: '<i class="fab fa-twitter-square"></i>'
+      },
+      {
+        social: 'Github',
+        fontawesomeIcon: '<i class="fab fa-github-square"></i>',
+        url: 'https://github.com/Asabeneh'
+      },
+      {
+        social: 'DEV.to',
+        fontawesomeIcon: '',
+        url: 'https://dev.to/asabeneh'
+      }
+    ],
+    skills: [
+      'Web Development',
+      'Data Analysis',
+      'Data Visualization',
+      'Programming',
+      'Databases',
+      'Developing API'
+    ],
+    bio:
+      'I am an educator, developer, motivator and content creator. I am a life-long learner. If you like to know more about me checkout my LinkedIn or Github profile. Thank you so much for joining in my quest of changing everyone to developer.'
+  },
+  challenges: [
+    {
+      name: '30 Days Of Python',
+      topics: [
+        'Python',
+        'Flask',
+        'Numpy',
+        'Pandas',
+        'Statistics',
+        'API',
+        'MongoDB'
+      ],
+      days: 30,
+      status: 'Done',
+      questions: 'Above 500',
+      projects: 'Two',
+      interviewQns: '',
+      githubUrl: 'https://github.com/Asabeneh/30-Days-Of-Python'
+    },
+    {
+      name: '30 Days Of JavaScript',
+      topics: ['JavaScript', 'ES6', 'Promise', 'async and await', 'DOM'],
+      days: 30,
+      status: 'Ongoing',
+      questions: 'Above 500',
+      projects: 'About 30',
+      interviewQns: '',
+      githubUrl: 'https://github.com/Asabeneh/30DaysOfJavaScript'
+    },
+    {
+      name: '30 Days Of HTML & CSS',
+      topics: ['CSS', 'Flex', 'Grid', 'CSS Animation'],
+      days: 30,
+      status: 'Coming',
+      questions: 'Above 500',
+      projects: 'Two',
+      interviewQns: '',
+      githubUrl: ''
+    },
+    {
+      name: '30 Days Of React',
+      topics: [
+        'React',
+        'React Router',
+        'Redux',
+        'Context API',
+        'React Hooks',
+        'MERN'
+      ],
+      days: 30,
+      status: 'Coming',
+      questions: '',
+      projects: '',
+      interviewQns: '',
+      githubUrl: ''
+    },
+    {
+      name: '30 Days Of ReactNative',
+      topics: ['ReactNative', 'Redux'],
+      days: 30,
+      status: 'Coming',
+      questions: '',
+      projects: 'Two',
+      interviewQns: '',
+      githubUrl: ''
+    },
+    {
+      name: '30 Days Of Fullstack',
+      topics: ['React', 'Redux', 'MongoDB', 'Node', 'MERN'],
+      days: 30,
+      status: 'Coming',
+      questions: '',
+      projects: '',
+      interviewQns: '',
+      githubUrl: ''
+    },
+    {
+      name: '30 Days Of Data Analysis',
+      topics: ['Python', 'Numpy', 'Pandas', 'Statistics', 'Visualization'],
+      days: 30,
+      status: 'Coming',
+      questions: '',
+      projects: '',
+      interviewQns: '',
+      githubUrl: ''
+    },
+    {
+      name: '30 Days Of Machine Learning',
+      topics: [
+        'Python',
+        'Numpy',
+        'Pandas',
+        'Scikit-learn',
+        'Scipy',
+        'Linear Algebra',
+        'Statistics',
+        'Visualization'
+      ],
+      days: 30,
+      status: 'Coming',
+      questions: '',
+      projects: '',
+      interviewQns: '',
+      githubUrl: ''
+    }
+  ]
+};
+
+// ------------------- Tạo giao diện toàn bộ bằng JS -------------------
+
+// Tạo container chính
+const wrapper = document.createElement('div');
+wrapper.style.width = '90%';
+wrapper.style.maxWidth = '1000px';
+wrapper.style.margin = '0 auto';
+wrapper.style.padding = '10px';
+
+// ========================= HEADER =========================
+const header = document.createElement('header');
+header.style.textAlign = 'center';
+header.style.marginBottom = '15px';
+
+// Title lớn
+const h1 = document.createElement('h1');
+h1.textContent = `${asabenehChallenges2020.challengeTitle} in ${asabenehChallenges2020.challengeYear}`;
+h1.style.fontSize = '28px';
+h1.style.letterSpacing = '1px';
+h1.style.margin = '5px';
+
+// Subtitle
+const h2 = document.createElement('h2');
+h2.textContent = asabenehChallenges2020.challengeSubtitle;
+h2.style.fontWeight = '300';
+h2.style.margin = '5px';
+
+// Thời gian (giả lập)
+const h3 = document.createElement('h3');
+h3.textContent = 'January 02, 2020';
+h3.style.display = 'inline-block';
+h3.style.padding = '5px 10px';
+h3.style.borderRadius = '5px';
+h3.style.fontWeight = '400';
+h3.style.marginTop = '10px';
+
+// Tạo màu biến thiên cho thời gian
+function randomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r},${g},${b})`;
+}
+setInterval(() => {
+  h3.style.backgroundColor = randomColor();
+}, 1000);
+
+// Gắn vào header
+header.appendChild(h1);
+header.appendChild(h2);
+header.appendChild(h3);
+
+// ========================= MAIN: Danh sách Challenges =========================
+const main = document.createElement('main');
+main.style.margin = '20px 0';
+
+asabenehChallenges2020.challenges.forEach(challenge => {
+  const challengeDiv = document.createElement('div');
+  challengeDiv.style.display = 'grid';
+  challengeDiv.style.gridTemplateColumns = '3fr 5fr 2fr';
+  challengeDiv.style.gap = '10px';
+  challengeDiv.style.alignItems = 'center';
+  challengeDiv.style.padding = '10px';
+  challengeDiv.style.marginBottom = '5px';
+
+  // Màu nền theo trạng thái
+  let bgColor = '';
+  if(challenge.status === 'Done') bgColor = '#8acf8a';       // xanh nhạt
+  else if(challenge.status === 'Ongoing') bgColor = '#ffeb7a';// vàng nhạt
+  else bgColor = '#ff9c9c';                                   // đỏ nhạt
+  challengeDiv.style.backgroundColor = bgColor;
+  challengeDiv.style.borderRadius = '5px';
+
+  // Tên challenge
+  const nameEl = document.createElement('div');
+  nameEl.textContent = challenge.name;
+  nameEl.style.fontWeight = 'bold';
+  challengeDiv.appendChild(nameEl);
+
+  // Topics
+  const topicsEl = document.createElement('div');
+  topicsEl.style.fontSize = '0.9rem';
+  topicsEl.style.color = '#333';
+  topicsEl.textContent = challenge.topics.join(', ');
+  challengeDiv.appendChild(topicsEl);
+
+  // Status
+  const statusEl = document.createElement('div');
+  statusEl.textContent = challenge.status;
+  statusEl.style.fontSize = '0.9rem';
+  statusEl.style.fontWeight = 'bold';
+  statusEl.style.textAlign = 'right';
+  challengeDiv.appendChild(statusEl);
+
+  main.appendChild(challengeDiv);
+});
+
+// ========================= FOOTER: Thông tin tác giả =========================
+const footer = document.createElement('footer');
+footer.style.marginTop = '30px';
+footer.style.textAlign = 'center';
+footer.style.padding = '10px 0';
+
+// Tên tác giả + mạng xã hội
+const authorName = document.createElement('h2');
+authorName.textContent = `${asabenehChallenges2020.author.firstName} ${asabenehChallenges2020.author.lastName}`;
+authorName.style.marginBottom = '5px';
+footer.appendChild(authorName);
+
+// Mạng xã hội
+const socialDiv = document.createElement('div');
+socialDiv.style.marginBottom = '10px';
+asabenehChallenges2020.author.socialLinks.forEach(link => {
+  const a = document.createElement('a');
+  a.href = link.url;
+  a.target = '_blank';
+  a.style.textDecoration = 'none';
+  a.style.margin = '0 8px';
+  a.style.color = '#0077b5';
+  a.innerHTML = link.fontawesomeIcon ? link.fontawesomeIcon : link.social;
+  socialDiv.appendChild(a);
+});
+footer.appendChild(socialDiv);
+
+// Bio
+const bioPara = document.createElement('p');
+bioPara.textContent = asabenehChallenges2020.author.bio;
+bioPara.style.maxWidth = '600px';
+bioPara.style.margin = '0 auto 20px auto';
+bioPara.style.lineHeight = '1.5';
+footer.appendChild(bioPara);
+
+// Danh sách titles
+const titleSection = document.createElement('div');
+titleSection.style.display = 'flex';
+titleSection.style.flexDirection = 'column';
+titleSection.style.alignItems = 'center';
+titleSection.style.marginBottom = '15px';
+
+const titlesHeader = document.createElement('h3');
+titlesHeader.textContent = 'Titles';
+titleSection.appendChild(titlesHeader);
+
+asabenehChallenges2020.author.titles.forEach(([icon, txt]) => {
+  const p = document.createElement('p');
+  p.textContent = `${icon} ${txt}`;
+  p.style.margin = '3px 0';
+  titleSection.appendChild(p);
+});
+footer.appendChild(titleSection);
+
+// Danh sách qualifications
+const qualSection = document.createElement('div');
+qualSection.style.display = 'flex';
+qualSection.style.flexDirection = 'column';
+qualSection.style.alignItems = 'center';
+qualSection.style.marginBottom = '15px';
+
+const qualHeader = document.createElement('h3');
+qualHeader.textContent = 'Qualifications';
+qualSection.appendChild(qualHeader);
+
+asabenehChallenges2020.author.qualifications.forEach(q => {
+  const p = document.createElement('p');
+  p.textContent = q;
+  p.style.margin = '3px 0';
+  qualSection.appendChild(p);
+});
+footer.appendChild(qualSection);
+
+// Kỹ năng
+const skillSection = document.createElement('div');
+skillSection.style.display = 'flex';
+skillSection.style.flexDirection = 'column';
+skillSection.style.alignItems = 'center';
+skillSection.style.marginBottom = '15px';
+
+const skillHeader = document.createElement('h3');
+skillHeader.textContent = 'Skills';
+skillSection.appendChild(skillHeader);
+
+asabenehChallenges2020.author.skills.forEach(skill => {
+  const p = document.createElement('p');
+  p.textContent = skill;
+  p.style.margin = '3px 0';
+  skillSection.appendChild(p);
+});
+footer.appendChild(skillSection);
+
+// Từ khóa (keywords)
+const keywordSection = document.createElement('div');
+keywordSection.style.marginTop = '20px';
+keywordSection.style.maxWidth = '700px';
+keywordSection.style.margin = '20px auto';
+keywordSection.style.display = 'flex';
+keywordSection.style.flexWrap = 'wrap';
+keywordSection.style.justifyContent = 'center';
+keywordSection.style.gap = '8px';
+
+const keywordHeader = document.createElement('h3');
+keywordHeader.textContent = 'Keywords';
+keywordHeader.style.textAlign = 'center';
+footer.appendChild(keywordHeader);
+
+asabenehChallenges2020.keywords.forEach(kw => {
+  const span = document.createElement('span');
+  span.textContent = `#${kw}`;
+  span.style.backgroundColor = '#f2f2f2';
+  span.style.padding = '5px 8px';
+  span.style.borderRadius = '15px';
+  span.style.fontSize = '0.85rem';
+  span.style.cursor = 'default';
+  keywordSection.appendChild(span);
+});
+footer.appendChild(keywordSection);
+
+// Gắn tất cả vào wrapper
+wrapper.appendChild(header);
+wrapper.appendChild(main);
+wrapper.appendChild(footer);
+
+// Thêm vào body
+document.body.appendChild(wrapper);
+
+</script>
+</body>
+</html>
