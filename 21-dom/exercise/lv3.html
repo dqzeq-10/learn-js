@@ -19,9 +19,17 @@
             <li>30DaysOfReactNative Challenge Coming</li>
             <li>30DaysOfMachineLearning Challenge Coming</li>
         </ul>
+      
     </div>
 
     <script>
+
+        const wrapper = document.querySelector('.wrapper')
+        wrapper.style.margin = '0 auto'
+        wrapper.style.fontFamily = 'Arial'
+        wrapper.style.width = '80%'
+        wrapper.style.textAlign = 'center'
+
 
         function getRandomColor() {
             const letters = '0123456789ABCDEF'
@@ -37,10 +45,29 @@
         h1.innerHTML = h1.textContent.replace('2020', '<span id ="year">2020</span>')
         const yearSpan = document.getElementById('year')
 
+        yearSpan.style.fontSize = '60px'
         setInterval(() => {
             yearSpan.style.color = getRandomColor()
         }, 1000);
 
+        const h2 = document.querySelector('h2')
+        h2.innerHTML = '<a href="#">'+ h2.textContent +'</a>'
+
+        const liS = document.querySelectorAll('li')
+
+        liS.forEach((li) =>{
+            li.style.textAlign = 'left'
+            li.style.listStyleType = 'none'
+            li.style.padding = '20px'
+            li.style.border = '2px solid white'
+            if(li.textContent.includes('Done')){
+                li.style.backgroundColor = 'Green'
+            }else if (li.textContent.includes('Ongoing')){
+                li.style.backgroundColor = 'Yellow'
+            }else{
+                li.style.backgroundColor = 'Red'
+            }
+        })
         
         
 
