@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>Removing child Node</h1>
+    <h2>Asabeneh Yetayeh challenges in 2020</h1>
+    <ul>
+        <li>30DaysOfPython Challenge Done</li>
+        <li>30DaysOfJavaScript Challenge Done</li>
+        <li>30DaysOfReact Challenge Coming</li>
+        <li>30DaysOfFullStack Challenge Coming</li>
+        <li>30DaysOfDataAnalysis Challenge Coming</li>
+        <li>30DaysOfReactNative Challenge Coming</li>
+        <li>30DaysOfMachineLearning Challenge Coming</li>
+    </ul>
+
+    <script>
+        let title = document.createElement('h1')
+        title.className = 'title'
+        title.style.fontSize = '24px'
+        title.textContent = 'Creating HTML element DOM day2'
+        console.log(title)
+
+
+        let title2
+        for (let i = 0; i < 3; i++) {
+            title2 = document.createElement('h1')
+            title2.className = 'title'
+            title2.style.fontSize = '24px'
+            title2.textContent = i
+
+            //muốn thấy nó trên web thì phải add nó vào phần tử cha của page
+            document.body.appendChild(title2)
+        }
+
+
+        //removing child node
+        const ul = document.querySelector('ul')
+        const lilist = document.querySelectorAll('li')
+        for (const list of lilist){
+            ul.removeChild(list)
+        }
+
+        //the better way to remove child
+        ul.innerHTML = ''
+    </script>
+</body>
+
+</html>
