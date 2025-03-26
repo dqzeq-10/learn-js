@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function prime(n){
+            if (n <= 1) return false;
+            if (n === 2) return true;
+            
+            for(let i = 2; i <= Math.sqrt(n); i++){
+                if(n % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        const divContainer = document.createElement('div')
+        divContainer.style.display = 'flex'
+        divContainer.style.flexWrap = 'wrap'
+        divContainer.style.width = '80%'
+        divContainer.style.margin = '0 auto'
+        document.body.appendChild(divContainer)
+        for(let i = 1; i<=100; i++){
+            let numberE = document.createElement('div')
+            numberE.textContent = i
+            numberE.style.width = '30px'
+            numberE.style.height = '20px'
+            numberE.style.padding = '20px'
+            numberE.style.margin = '3px'
+            numberE.style.textAlign = 'center'
+            numberE.style.color = 'white'
+            numberE.style.font = '60px'
+            if (prime(i)){
+                numberE.style.backgroundColor = 'red'
+            }else if(i%2 == 0){
+                numberE.style.backgroundColor = 'green'
+            }else {
+                numberE.style.backgroundColor = 'yellow'
+            }
+            divContainer.appendChild(numberE)
+        }
+    </script>
+</body>
+</html>
