@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const h1 = document.createElement('h1')
+        const divCode = document.createElement('div')
+        
+        h1.setAttribute('tabindex', '0')
+        h1.textContent = 'Press any key when focused on me'
+        
+        document.body.appendChild(h1)
+        document.body.appendChild(divCode)
+        
+        document.body.addEventListener('keypress', e => {
+            h1.textContent = `you pressed ${e.key}`
+            divCode.textContent = e.keyCode
+        })
+        
+        h1.focus()
+    </script>
+</body>
+</html>
