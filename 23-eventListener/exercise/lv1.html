@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const h1 = document.createElement('h1')
+        h1.textContent = 'Number Generator'
+        h1.style.font = '60px'
+        h1.style.color = 'green'
+        h1.style.textAlign = 'center'
+        document.body.appendChild(h1)
+
+        const h2 = document.createElement('h2')
+        h2.textContent = 'Zeq'
+        h2.style.textAlign = 'center'
+        document.body.appendChild(h2)
+
+        const container = document.createElement('div')
+        container.style.textAlign = 'center'
+        document.body.appendChild(container)
+
+        const input = document.createElement('input')
+        input.style.width = '200px'
+        input.style.height = '20px'
+        container.appendChild(input)
+
+        const btn = document.createElement('button')
+        btn.textContent = 'Generate numbers'
+        btn.style.color = 'white'
+        btn.style.marginLeft = '10px'
+        btn.style.height = '25px'
+        btn.style.backgroundColor = 'green'
+        container.appendChild(btn)
+
+        const divC = document.createElement('div')
+        divC.style.width = '100%'
+        divC.style.margin = '0 auto'
+        divC.style.display = 'flex'
+        divC.style.flexWrap = 'wrap'
+        divC.style.justifyContent = 'center'
+        document.body.appendChild(divC)
+
+        function prime(number) {
+            if (number < 2)
+                return false
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    return false
+                }
+            }
+            return true
+        }
+        function getColor(number) {
+            if (prime(number)) {
+                return 'red'
+            } else if (number % 2 == 0) {
+                return 'green'
+            } else
+                return 'yellow'
+            return 'NaInt'
+        }
+
+        btn.addEventListener('click', e => {
+            divC.innerHTML = '';
+            if (input.value === null || isNaN(input.value)) {
+
+                const errorMessage = document.createElement('p');
+                errorMessage.textContent = 'nhap so';
+                divC.appendChild(errorMessage);
+
+            } else {
+
+
+
+                for (let i = 0; i <= input.value; i++) {
+                    let numberE = document.createElement('div')
+                    numberE.textContent = i
+                    numberE.style.width = '40px'
+                    numberE.style.height = '40px'
+                    numberE.style.font = '30px'
+                    numberE.style.color = 'white'
+                    numberE.style.backgroundColor = getColor(i)
+                    numberE.style.textAlign = 'center'
+                    numberE.style.margin = '2px'
+                    numberE.style.display = 'flex'
+                    numberE.style.alignItems = 'center'
+                    numberE.style.justifyContent = 'center'
+                    divC.appendChild(numberE)
+                }
+            }
+        }) 
+
+    </script>
+</body>
+
+</html>
